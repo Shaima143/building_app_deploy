@@ -35,5 +35,5 @@ Route::get('test', 'IssuesController@test');
 
 Route::get('issues/list', 'IssuesController@list');
 
-//Route::get('users', 'UsersController@export');
+Route::get('users', 'UsersController@export');
 #These are comments
