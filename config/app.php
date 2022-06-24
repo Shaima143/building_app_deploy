@@ -174,7 +174,12 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        //Excel
         Maatwebsite\Excel\ExcelServiceProvider::class,
+
+        //sweet alert
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
 
 
     ],
@@ -230,8 +235,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-
-
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
     ],
 
 ];

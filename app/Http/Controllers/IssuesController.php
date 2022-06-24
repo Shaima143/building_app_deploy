@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Imports\IssuesImport;
 use Maatwebsite\Excel\Facades\Excel;
+Use Alert;
 
 class IssuesController extends Controller
 {
@@ -50,7 +51,12 @@ class IssuesController extends Controller
     public function importFromExcel(Request $request){
 
         //validate file
+        $request->validate([
+            'excelFile' => 'required|mimes:xlsx'
+        ]);
         Excel::import(new IssuesImport, $request -> excelFile);
+        Alert::success('Data Imported Successfully', 'Thank you!');
+        return back();
 
         return "Data imported sucessfully";
 
